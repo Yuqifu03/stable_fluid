@@ -266,7 +266,7 @@ class Fluid3D:
             for i, j, k in vel:
                 p = ti.Vector([(i + stagger.x) * dx,
                                (j + stagger.y) * dx,
-                               (k + stagger.z) * dx])   # ← 修复你的 typo
+                               (k + stagger.z) * dx])
                 d2 = (p - pos).norm_sqr()
                 radius = 0.2 * r
                 vel[i, j, k] += dp * dt * ti.exp(-d2 / radius) * 40
